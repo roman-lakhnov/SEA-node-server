@@ -47,6 +47,7 @@ Download the prebuilt Node.js binary for your target OS and architecture from
 
 - `node-v22.18.0-linux-x64.tar.xz`
 - `node-v22.18.0-win-x64.zip`
+- `node-v18.20.8-linux-armv7l`
 
 Extract and place the `node` (Linux) or `node.exe` (Windows) binary in your
 project root.
@@ -129,6 +130,13 @@ standalone executable for your server.
   target OS and architecture.
 - If you encounter issues with signatures on Windows, perform the injection step
   on a Windows machine.
+- The SEA feature was introduced in Node.js 18.16.0. To use SEA with earlier
+  Node.js versions, the inject script may need to be modified.
+- Tested with `node-v18.20.8-linux-armv7l`:
+
+  ```json
+  "inject": "postject node NODE_JS_FUSE server.js --sentinel-fuse NODE_JS_FUSE_fce680ab2cc467b6e072b8b5df1996b2"
+  ```
 
 ---
 
